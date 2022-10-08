@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrigoWare</title>
+
+    <!--ONLINE BOOTSTRAP-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+		  rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+		  crossorigin="anonymous"/>
+    <link rel="stylesheet" href="calcu-extrastylesheet.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+		    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+		    crossorigin="anonymous">
+    </script>
+    <!--ICO-->
+    <link rel="shortcut icon" href="title-logo.png" type="image/x-icon" />
+    <!--ICONS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    
+</head>
+<body style="background-color: #c9cdd0;">
+    <!--start of navbar-->
+        <div class="container-fluid bg-secondary text-primary">
+            <div class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="calculator_page.html">
+                    <img src="calcu-logo.png" style="width: 100px;">
+                </a>
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#NavBarMenu">
+                    <span class="navbar-toggler-icon">
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="NavBarMenu">
+                    <ul class="navbar-nav text-center my-1">
+                        <li class="nav-item">
+                            <a class="nav-link nabvrButton" href="calculator_page.html">Calculator</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle nabvrButton" href="#" role="button" 
+                            data-bs-toggle="dropdown" aria-expanded="false">Others</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="#">Coming Soon..</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nabvrButton" href="#">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <h1 class="display-4 text-center"> ONLINE CALCULATOR </h1>
+        <form id="form1" class="w-50 pt-4 px-3 bg-secondary">
+            <center>
+                <input class="form-control rounded border border-3 border-dark w-100 fw-bold" style="padding: 12px 20px;" type="text" name="answer" id="answer">
+            </center>
+
+            <br><br>
+            <input class="btn bg-light text-dark fw-bold" style="border-color: black; padding: 3%; width: 20%; border-width: 2px;" type="button" value="1" onclick="form1.answer.value += '1' ">
+            <input class="btn bg-light text-dark fw-bold" style="border-color: black; padding: 3%; width: 20%; border-width: 2px;" type="button" value="2" onclick="form1.answer.value += '2' ">
+            <input class="btn bg-light text-dark fw-bold" style="border-color: black; padding: 3%; width: 20%; border-width: 2px;" type="button" value="3" onclick="form1.answer.value += '3' ">
+            <input class="btn bg-light text-dark fw-bold" style="border-color: black; padding: 3%; width: 20%; border-width: 2px;" type="button" value="+" onclick="form1.answer.value += '+' ">
+
+            <br><br>
+            <input class="btn bg-light text-dark fw-bold" style="border-color: black; padding: 3%; width: 20%; border-width: 2px;" type="button" value="4" onclick="form1.answer.value += '4' ">
+            <input class="btn bg-light text-dark fw-bold" style="border-color: black; padding: 3%; width: 20%; border-width: 2px;" type="button" value="5" onclick="form1.answer.value += '5' ">
+            <input class="btn bg-light text-dark fw-bold" style="border-color: black; padding: 3%; width: 20%; border-width: 2px;" type="button" value="6" onclick="form1.answer.value += '6' ">
+            <input class="btn bg-light text-dark fw-bold" style="border-color: black; padding: 3%; width: 20%; border-width: 2px;" type="button" value="-" onclick="form1.answer.value += '-' ">
+
+            <br><br>
+            <input class="btn bg-light text-dark fw-bold" style="border-color: black; padding: 3%; width: 20%; border-width: 2px;" type="button" value="7" onclick="form1.answer.value += '7' ">
+            <input class="btn bg-light text-dark fw-bold" style="border-color: black; padding: 3%; width: 20%; border-width: 2px;" type="button" value="8" onclick="form1.answer.value += '8' ">
+            <input class="btn bg-light text-dark fw-bold" style="border-color: black; padding: 3%; width: 20%; border-width: 2px;" type="button" value="9" onclick="form1.answer.value += '9' ">
+            <input class="btn bg-light text-dark fw-bold" style="border-color: black; padding: 3%; width: 20%; border-width: 2px;" type="button" value="*" onclick="form1.answer.value += '*' ">
+
+            <br><br>
+            <input class="btn bg-light text-dark fw-bold" style="border-color: black; padding: 3%; width: 20%; border-width: 2px;" type="button" value="/" onclick="form1.answer.value += '/' ">
+            <input class="btn bg-light text-dark fw-bold" style="border-color: black; padding: 3%; width: 20%; border-width: 2px;" type="button" value="0" onclick="form1.answer.value += '0' ">
+            <input class="btn bg-light text-dark fw-bold" style="border-color: black; padding: 3%; width: 20%; border-width: 2px;" type="button" value="." onclick="form1.answer.value += '.' ">
+            <!--Result of the calculated numbers-->
+            <input class="btn bg-light text-dark" style="border-color: black; padding: 3%; width: 20%; border-width: 2px;" type="button" value="=" onclick="form1.answer.value = eval(form1.answer.value)">
+            <!--Clears the calculator screen-->
+            <br><br>
+            <input class="btn w-75 fw-bold" style="background-color: white; border-color: black;  border-width: 2px;" 
+                type="button" value="Clear All" onclick="form1.answer.value = ' ' " id="clearAll">
+            <br><br>
+            
+        </form>
+
+    <!--start of footer-->
+        <footer class="bg-secondary">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-3">
+                        <img src="calcu-logo.png" class="my-3 mx-2" style="width: 170px;">
+                    
+                    </div>
+                    <div class="col-lg-3 col-md mt-3">
+                        <h5 class="mx-4 text-white">Useful Links</h5>
+                        <ul style="list-style-type: none;">
+                            <li> <a href="#" class="ftrlinks">About Us</a></li>
+                            <li> <a href="#" class="ftrlinks">Calculator</a></li>
+                            <li> <a href="#" class="ftrlinks">Others</a></li>
+                            <li> <a href="#" class="ftrlinks">Privacy Policy</a></li>
+                            <li> <a href="#" class="ftrlinks">Terms of Use</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mt-3">
+                        <h5 class="mx-2 opacity-75 text-center text-white">Connect with us</h5>
+                        <section class="text-center">
+                            <a href="https://www.facebook.com/" role="button" class="btn m-1" style="background-color: #3b5998; border-radius: 50%;">
+                                <i class="bi bi-facebook" style="font-size: 20pt; color: white;"></i></a>
+                            <a href="https://twitter.com/" role="button" class="btn m-1" style="background-color: #55acee; border-radius: 50%;">
+                                <i class="bi bi-twitter" style="font-size: 20pt; color: white;"></i></a>
+                            <a href="https://www.instagram.com/" role="button" class="btn m-1" style="background-color: #ac2bac; border-radius: 50%;">
+                                <i class="bi bi-instagram" style="font-size: 20pt; color: white;"></i></a>
+                            <a href="https://www.google.com/intl/fil/gmail/about/" role="button" class="btn m-1" style="background-color: #dd4b39; border-radius: 50%;">
+                                <i class="bi bi-google" style="font-size: 20pt; color: white;"></i></a>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center p-3">
+                <i class="bi bi-c-circle text-white"> 2022 All Rights Reserved</i><br><br>
+                <i class="fw-light text-white">Created by: Margus Odette H. Alovera</i>
+            </div>
+        </footer>
+    <!--end of footer-->
+</body>
+</html>
