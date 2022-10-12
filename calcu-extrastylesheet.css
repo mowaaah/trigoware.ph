@@ -7,12 +7,25 @@
     padding: 10px;
     border-radius: 25px;
 }
+.backgroundConvert{
+    text-align: center;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 9%;
+    border: 3px solid black;
+    padding: 10px;
+    border-radius: 25px;
+}
 .nabvrButton{
     color: white;
 }
 .nabvrButton:hover{
     background-color: white;
     color: black;
+}
+.nabvrDropdown:hover{
+    color: black;
+    background-color: #C9CDD0;
 }
 .ftrlinks{
     color: white;
