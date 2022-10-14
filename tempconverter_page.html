@@ -10,7 +10,7 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
 		  rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
 		  crossorigin="anonymous"/>
-    
+
     <link rel="stylesheet" href="css/main.min.css">
     <link rel="stylesheet" href="calcu-extrastylesheet.css">
 
@@ -22,6 +22,8 @@
     <link rel="shortcut icon" href="title-logo.png" type="image/x-icon" />
     <!--ICONS-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!--External JS-->
+    <script src="main.js"></script>
 </head>
 <body style="background-color: #D1C3BE;">
     <!--start of navbar-->
@@ -58,47 +60,59 @@
                 </div>
             </div>
         </div>
-        <br><br>
-        <!--Start of Calculator-->
-        <h1 class="display-4 text-center text-white"> ONLINE CALCULATOR </h1>
-        <form id="form1" class="w-50 pt-4 px-3 bg-secondary">
-            <center>
-                <input class="form-control rounded border border-3 border-secondary w-100 fw-bold" style="padding: 12px 20px; border-color: #3b3531;;" type="text" name="answer" id="answer">
-            </center>
-
-            <br><br>
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="1" onclick="form1.answer.value += '1' ">
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="2" onclick="form1.answer.value += '2' ">
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="3" onclick="form1.answer.value += '3' ">
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="+" onclick="form1.answer.value += '+' ">
-
-            <br><br>
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="4" onclick="form1.answer.value += '4' ">
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="5" onclick="form1.answer.value += '5' ">
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="6" onclick="form1.answer.value += '6' ">
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="-" onclick="form1.answer.value += '-' ">
-
-            <br><br>
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="7" onclick="form1.answer.value += '7' ">
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="8" onclick="form1.answer.value += '8' ">
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="9" onclick="form1.answer.value += '9' ">
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="*" onclick="form1.answer.value += '*' ">
-
-            <br><br>
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="/" onclick="form1.answer.value += '/' ">
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="0" onclick="form1.answer.value += '0' ">
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="." onclick="form1.answer.value += '.' ">
-            <!--Result of the calculated numbers-->
-            <input class="btn bg-neutral " style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="=" onclick="form1.answer.value = eval(form1.answer.value)">
-            <!--Clears the calculator screen-->
-            <br><br>
-            <input class="btn w-75 fw-bold" style="background-color: white; border-color: #60574f; color:#3b3531; border-width: 2px;" 
-                type="button" value="Clear All" onclick="form1.answer.value = ' ' " id="clearAll">
-            <br><br>
-            
-        </form>
-        <!--End of Calculator-->
+        <br>
+        <!--Start of Converter-->
+        <div class="container backgroundConvert bg-secondary py-5 w-75">
+            <h1 class="display-3 text-center d-flex-lg text-white" style="font-family:monospace;">
+                <i class="bi bi-thermometer-half">Temperature Converter</i></h1>
         
+        <br><br>
+            <center>
+                
+            <select class="form-control w-75 text-center fw-bold bg-calc" id="selection" onclick="(TempOnClick());">
+                <option value="blank" selected class="bg-neutral">Choose temperature</option>
+                <option value="C">Celcius (°C)</option>
+                <option value="F">Fahrenheit (°F)</option>
+                <option value="K">Kelvin (K)</option>
+            </select>
+        
+        <br><!--SPACE-->
+
+        <div class="form-group">
+            <label for="input1" class="fw-bold text-white"> Input Temperature:</label>
+            <input type="number" 
+                   class="form-control border border-2 border-secondary w-75 fw-bold text-center"
+                   id="input1" 
+                   onkeyup="(TempOnKeyUp());"
+                   placeholder="00.00">
+        </div>
+
+        <br><br><!--SPACE-->
+        
+            <input type="text" 
+                   class="form-control border border-2 border-secondary w-75 fw-bold text-center"  
+                   id="input2" disabled>
+
+        <br><!--SPACE-->
+
+            <input type="text" 
+                   class="form-control border border-2 border-secondary w-75 fw-bold text-center" 
+                   id="input3" disabled>
+            
+        <br><br><!--SPACE-->
+            
+            <button class="btn btn-calc w-50 d-flex-lg fw-bold" 
+                    type="button" 
+                    id="button1" 
+                    onclick="(ClearFields());">
+                    Reset
+            </button>
+            </center> 
+            
+        </div>
+        <!--End of Converter-->
+        <br><br><br><br><!--SPACE-->
+
     <!--start of footer-->
         <footer class="bg-secondary">
             <div class="container-fluid">

@@ -3,7 +3,7 @@
     margin: auto;
     margin-top: 5%;
     margin-bottom: 9%;
-    border: 3px solid black;
+    border: 3px solid #B2A596;
     padding: 10px;
     border-radius: 25px;
 }
@@ -12,31 +12,27 @@
     margin: auto;
     margin-top: 5%;
     margin-bottom: 9%;
-    border: 3px solid black;
+    border: 3px solid #B2A596;
     padding: 10px;
     border-radius: 25px;
 }
 .nabvrButton{
-    color: white;
+    color:white
 }
 .nabvrButton:hover{
     background-color: white;
-    color: black;
+    color: #60574f;
 }
-.nabvrDropdown:hover{
-    color: black;
-    background-color: #C9CDD0;
+.nabvrDrpdwn:hover{
+    color: white;
+    background-color: #C5B8AB;
 }
 .ftrlinks{
-    color: white;
+    color: #60574f;
 }
 .ftrlinks:hover{
     color: black;
 }
 .calcuBtn{
     border-color: black; background-color: white; color: black; padding: 3%; width: 20%; border-width: 2px; cursor: pointer; 
-}
-.calcuBtn:hover{
-    border-color:inherit;
-    color: inherit;
 }
