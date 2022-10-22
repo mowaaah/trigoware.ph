@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrigoWare</title>
-
+    <title>Rock,Paper,Scissor: Game</title>
     <!--ONLINE BOOTSTRAP-->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
 		  rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
 		  crossorigin="anonymous"/>
     
     <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="rock-paper-scissor.css">
     <link rel="stylesheet" href="calcu-extrastylesheet.css">
-
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
 		    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
 		    crossorigin="anonymous">
@@ -61,48 +61,51 @@
                 </div>
             </div>
         </div>
-        <br><br>
-        <!--Start of Calculator-->
-        <h1 class="display-4 text-center text-white"> ONLINE CALCULATOR </h1>
-        <form id="form1" class="w-50 pt-4 px-3 bg-secondary">
-            <center>
-                <input class="form-control rounded border border-3 border-secondary w-100 fw-bold" style="padding: 12px 20px; border-color: #3b3531;;" type="text" name="answer" id="answer">
-            </center>
+        <br>
+        <button type="button" onclick="resetGame();" class="btn mx-4 btn-calc">Restart Game</button>
+        <div class="title_header">
+            <div class="score_Board"> 
+                <div class="title">
+                    <img src='/assets/title_header.png'  style="width: 300px; align-items: center;">
+                </div>
+                <div class="person_Score">
+                    <p>SCORE</p>
+                    <h1>0</h1>
+                </div>
+            </div>
+            <div class="hands_btn">
+                <div class="hand paper">
+                    <img src='/assets/paper-pic.png' onclick="pickPersonHand('paper')"/>
+                </div>
+                <div class="hand scissors">
+                    <img src='/assets/scissor-pic.png' onclick="pickPersonHand('scissors')"/>
+                </div>
+                <div class="hand rock">
+                    <img src='/assets/rock-pic.png' onclick="pickPersonHand('rock')"/>                        
+                </div>
+            </div>
+            <div class="game">       
+                <div class="personhand">
+                    <h1>YOU PICKED</h1>
+                    <div class="handImageContainer">
+                        <img id="personPickImage" src='/assets/paper-pic.png'>
+                    </div>
+                </div>
+                <div class="neuter"> 
+                    <div class="decision"><h1> YOU WIN! </h1></div>
+                    <div class="new_Game" onclick="restartbtn_Game()">PLAY AGAIN</div>
+                </div>
+                <div class="comphand">
+                    <h1>COMPUTER PICKED</h1>
+                    <div class="handImageContainer">
+                        <img id="computerPickImage" src='/assets/paper-pic.png'> 
+                    </div>   
+                </div>       
+            </div>        
+        </div>
+        <br><br><br><br><br><br><!--SPACE-->
 
-            <br><br>
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="1" onclick="form1.answer.value += '1' ">
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="2" onclick="form1.answer.value += '2' ">
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="3" onclick="form1.answer.value += '3' ">
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="+" onclick="form1.answer.value += '+' ">
-
-            <br><br>
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="4" onclick="form1.answer.value += '4' ">
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="5" onclick="form1.answer.value += '5' ">
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="6" onclick="form1.answer.value += '6' ">
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="-" onclick="form1.answer.value += '-' ">
-
-            <br><br>
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="7" onclick="form1.answer.value += '7' ">
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="8" onclick="form1.answer.value += '8' ">
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="9" onclick="form1.answer.value += '9' ">
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="*" onclick="form1.answer.value += '*' ">
-
-            <br><br>
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="/" onclick="form1.answer.value += '/' ">
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="0" onclick="form1.answer.value += '0' ">
-            <input class="btn bg-neutral fw-bold" style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="." onclick="form1.answer.value += '.' ">
-            <!--Result of the calculated numbers-->
-            <input class="btn bg-neutral " style="border-color: #60574f; color:#3b3531; padding: 3%; width: 20%; border-width: 2px;" type="button" value="=" onclick="form1.answer.value = eval(form1.answer.value)">
-            <!--Clears the calculator screen-->
-            <br><br>
-            <input class="btn w-75 fw-bold" style="background-color: white; border-color: #60574f; color:#3b3531; border-width: 2px;" 
-                type="button" value="Clear All" onclick="form1.answer.value = ' ' " id="clearAll">
-            <br><br>
-            
-        </form>
-        <!--End of Calculator-->
-        
-    <!--start of footer-->
+        <!--start of footer-->
         <footer class="bg-secondary">
             <div class="container-fluid">
 
@@ -150,4 +153,10 @@
         </footer>
     <!--end of footer-->
 </body>
+<!--External JS-->
+    <script src="main2.js"></script>
 </html>
+<!--
+    REFERENCES:
+    https://github.com/CleverProgrammers/challenge-sunnyside-landing-page
+-->
